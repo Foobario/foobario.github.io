@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordle Time Machine</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@easepick/datetime@1.0.1/dist/index.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@easepick/core@1.0.1/dist/index.umd.min.js"></script>
+</head>
+<body>
+  <h1>Wordle Time Machine</h1>
+  <h2 id="wordleDate"></h2>
+  <!-- <div id="modal"></div> -->
+  <div id="picker">
+    <button id="first" class="tip"><<<span class="tiptext">19 JUN 2021</span></button>
+    <button id="prev" class="tip"><<span class="tiptext">Previous</span></button>
+    <button id="today" class="tip">Today</button>
+    <button id="next" class="tip">><span class="tiptext">Next</span></button>
+    <button id="last" class="tip">>><span class="tiptext">14 OCT 2027</span></button>
+  <!-- </div>
+  <div id="status"> -->
+    <button id="random">Random</button>
+    <!-- <button id="cal">or choose a date</button> -->
+  </div>
+  <div id="grid"></div>
+  <div id="kb">
+    <div class="first-row">
+      <button class="ltr">q</button>
+      <button class="ltr">w</button>
+      <button class="ltr">e</button>
+      <button class="ltr">r</button>
+      <button class="ltr">t</button>
+      <button class="ltr">y</button>
+      <button class="ltr">u</button>
+      <button class="ltr">i</button>
+      <button class="ltr">o</button>
+      <button class="ltr">p</button>
+    </div>
+    <div class="second-row">
+      <button class="ltr">a</button>
+      <button class="ltr">s</button>
+      <button class="ltr">d</button>
+      <button class="ltr">f</button>
+      <button class="ltr">g</button>
+      <button class="ltr">h</button>
+      <button class="ltr">j</button>
+      <button class="ltr">k</button>
+      <button class="ltr">l</button>
+    </div>
+    <div class="third-row">
+      <button class="ltr" id="bs">🠘</button>
+      <button class="ltr">z</button>
+      <button class="ltr">x</button>
+      <button class="ltr">c</button>
+      <button class="ltr">v</button>
+      <button class="ltr">b</button>
+      <button class="ltr">n</button>
+      <button class="ltr">m</button>
+      <button class="ltr">Enter</button>
+    </div>
+  </div>
+  <!-- <script>
+    const picker = new easepick.create({
+      element: document.getElementById('cal'),//'status'),
+      css: [
+        'https://cdn.jsdelivr.net/npm/@easepick/core@1.0.1/dist/index.css',
+      ],
+    });
+  </script> -->
+  <script src="words.js"  type="text/javascript"></script>
+  <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>
