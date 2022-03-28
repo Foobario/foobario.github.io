@@ -95,7 +95,7 @@ function checkGuess() {
 
   // if the guess isn't in the game's dictionary, don't accept it
   if (!WORDLES.includes(guessString)) {
-    toastr.error("Sorry, your guess is not in game's dictionary.");
+    toastr.error("Sorry, your guess is not in the game's dictionary.");
     return;
   }
 
