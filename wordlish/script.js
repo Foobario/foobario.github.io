@@ -95,7 +95,7 @@ function checkGuess() {
 
   // if the guess isn't in the game's dictionary, don't accept it
   if (!WORDLES.includes(guessString)) {
-    toastr.error("Sorry, your guess is not in the game's dictionary.");
+    toastr.error("Sorry, your guess is not in game's dictionary.");
     return;
   }
 
@@ -142,9 +142,9 @@ function checkGuess() {
     return;
   }
   else {
-    triesLeft -= 1;
+    triesLeft   -= 1;
     currentGuess = [];
-    nextLetter = 0;
+    nextLetter   = 0;
 
     if (triesLeft === 0) {
       toastr.error("Sorry, you are out of guesses.");
@@ -208,11 +208,13 @@ document.addEventListener("keyup", (e) => {
   document.getElementById("next").blur();
   document.getElementById("last").blur();
   document.getElementById("random").blur();
+  document.getElementById("bs").blur();
   // document.getElementById("cal").blur();
 
   if (triesLeft === 0) return;
 
   let theKey = String(e.key);
+
   if (theKey === "Backspace" && nextLetter !== 0) {
     deleteLetter();
     return;
@@ -250,18 +252,13 @@ document.getElementById("kb").addEventListener("click", (e) => {
   target.blur();
 })
 
-document.getElementById("first").addEventListener("click", (e) => { setup(0) });
-document.getElementById("prev").addEventListener("click", (e) => { setup(dayNum - 1) });
-document.getElementById("today").addEventListener("click", (e) => { setup(numFromDate(currentDate, startDate)) });
-document.getElementById("next").addEventListener("click", (e) => { setup(dayNum + 1) });
-document.getElementById("last").addEventListener("click", (e) => { setup(WORDLES.length - 1) });
+document.getElementById("first" ).addEventListener("click", (e) => { setup(0) });
+document.getElementById("prev"  ).addEventListener("click", (e) => { setup(dayNum - 1) });
+document.getElementById("today" ).addEventListener("click", (e) => { setup(numFromDate(currentDate, startDate)) });
+document.getElementById("next"  ).addEventListener("click", (e) => { setup(dayNum + 1) });
+document.getElementById("last"  ).addEventListener("click", (e) => { setup(WORDLES.length - 1) });
 document.getElementById("random").addEventListener("click", (e) => { setup(Math.floor(Math.random() * 2309)) });
-
-// function setClick(id, val) {
-//   document.getElementById(id).addEventListener("click", (e) => {
-//     setup(val);
-//   });
-// }
+document.getElementById("bs"    ).addEventListener("click", (e) => { deleteLetter() });
 
 async function getch(word) {
   try {
